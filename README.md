@@ -1,1 +1,1 @@
-# Idlerpg
+# Idle-rpg-game
