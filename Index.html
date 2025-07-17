@@ -3,40 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Idle RPG Game</title>
-
-  <!-- Manifest + Favicon -->
-  <link rel="manifest" href="manifest.json" />
-  <link rel="icon" href="graphics/icon-192.png" />
-
-  <!-- PWA Theme Color -->
-  <meta name="theme-color" content="#ffffff" />
-
-  <!-- CSS -->
+  <title>Idle RPG</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Idle RPG</h1>
+  <div id="login-screen">
+    <h2>Logowanie</h2>
+    <input type="email" id="email" placeholder="Email" />
+    <input type="text" id="nickname" placeholder="Nick" />
+    <button onclick="login()">Zaloguj</button>
+  </div>
 
-  <p><strong>Poziom:</strong> <span id="level">1</span></p>
-  <p><strong>Złoto:</strong> <span id="gold">0</span></p>
+  <div id="class-selection" class="hidden">
+    <h2>Wybierz klasę</h2>
+    <button onclick="chooseClass('Wojownik')">🗡️ Wojownik</button>
+    <button onclick="chooseClass('Mag')">🧙 Mag</button>
+    <button onclick="chooseClass('Łotrzyk')">🗡️ Łotrzyk</button>
+    <button onclick="chooseClass('Kapłan')">⛪ Kapłan</button>
+  </div>
 
-  <button onclick="fight()">Walka</button>
+  <div id="game" class="hidden">
+    <h2>Witaj, <span id="player-nick"></span> (<span id="player-class"></span>)</h2>
+    <p>Poziom: <span id="level">1</span> | XP: <span id="xp">0</span> / <span id="xpToNext">10</span></p>
+    <p>Złoto: <span id="gold">0</span></p>
+    
+    <div id="battle-log"></div>
+    <button onclick="attackMonster()">▶️ Walcz z potworem</button>
+  </div>
 
-  <div id="log"></div>
-
-  <!-- Skrypty -->
-  <script src="js/game.js"></script>
-  <script src="js/save.js"></script>
-  <script src="js/ui.js"></script>
-
-  <!-- PWA: Service Worker -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js')
-        .then(() => console.log("✅ Service Worker aktywowany"))
-        .catch(err => console.error("❌ Błąd SW:", err));
-    }
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
