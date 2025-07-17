@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Idle RPG Online</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#ffffff" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Idle RPG Online</h1>
+      <input type="text" id="username" placeholder="Wpisz swoją nazwę" />
+      <button onclick="saveUsername()">Zapisz nazwę</button>
+    </header>
+
+    <section class="stats">
+      <h2>Postać</h2>
+      <p>Poziom: <span id="level">1</span></p>
+      <p>XP: <span id="xp">0</span> / <span id="xpMax">10</span></p>
+      <p>Złoto: <span id="gold">0</span></p>
+      <p>Punkty statystyk: <span id="statPoints">0</span></p>
+      <div class="stat-buttons">
+        <button onclick="addStat('strength')">+ Siła</button>
+        <button onclick="addStat('speed')">+ Szybkość</button>
+        <button onclick="addStat('crit')">+ Krytyk</button>
+      </div>
+    </section>
+
+    <section class="combat">
+      <h2>Walka</h2>
+      <img id="monsterImage" src="graphics/monster1.png" alt="Potwór" />
+      <button onclick="fight()">WALCZ</button>
+    </section>
+
+    <section class="inventory">
+      <h2>Ekwipunek</h2>
+      <ul id="inventoryList"></ul>
+    </section>
+
+    <section class="shop">
+      <h2>Sklep</h2>
+      <button onclick="buyItem()">Kup przedmiot (20 złota)</button>
+      <button onclick="buySpell()">Kup czar (30 złota)</button>
+    </section>
+
+    <section class="skills">
+      <h2>Umiejętności</h2>
+      <ul id="skillsList"></ul>
+    </section>
+
+    <section class="log">
+      <h2>Log</h2>
+      <div id="logBox"></div>
+    </section>
+  </main>
+
+  <script src="js/game.js"></script>
+  <script src="js/save.js"></script>
+  <script src="js/ui.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+</body>
+</html>
