@@ -1,0 +1,1 @@
+console.log('Gra wczytana: Idle RPG v5.1-img');
