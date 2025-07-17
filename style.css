@@ -1,0 +1,78 @@
+/* style.css – Jasny motyw Idle RPG */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 8px;
+  width: 60%;
+  max-width: 300px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #3a7bd5;
+}
+
+section {
+  margin-bottom: 30px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2 {
+  margin-top: 0;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+#monsterImage {
+  max-width: 150px;
+  display: block;
+  margin: 10px auto;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
+}
+
+#logBox {
+  max-height: 150px;
+  overflow-y: auto;
+  background: #fafafa;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
